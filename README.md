@@ -1,4 +1,4 @@
-# Prom-Stack
+# Elasticsearch - Kibana
 
 This repo contains a quick start for running a development instance of Elasticsearch and Kibana.  
 
