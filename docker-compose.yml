@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   elasticsearch:
-   image: docker.elastic.co/elasticsearch/elasticsearch:6.6.1
+   image: docker.elastic.co/elasticsearch/elasticsearch:7.0.0
    container_name: elasticsearch
    ports:
     - "9200:9200"
@@ -13,10 +13,12 @@ services:
     - docker-network
 
   kibana:
-   image: docker.elastic.co/kibana/kibana:6.6.1
+   image: docker.elastic.co/kibana/kibana:7.0.0
    container_name: kibana
    ports:
     - "5601:5601"
+   environment:
+     ELASTICSEARCH_HOSTS: http://localhost:9200
    depends_on:
     - elasticsearch
    networks:
